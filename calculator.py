@@ -55,3 +55,26 @@ class Calculator:
 
 if __name__ == "__main__":
     Calculator().repl()
+
+
+class Command:
+    def execute(self):
+        pass
+
+class AddCommand(Command):
+    def __init__(self, calculator, a, b):
+        self.calculator = calculator
+        self.a = a
+        self.b = b
+
+    def execute(self):
+        return self.calculator.add(self.a, self.b)
+
+class SubtractCommand(Command):
+    def __init__(self, calculator, a, b):
+        self.calculator = calculator
+        self.a = a
+        self.b = b
+
+    def execute(self):
+        return self.calculator.subtract(self.a, self.b)
